@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+venv/
+env/
+.venv/
+.env/
+
+# Credentials & secrets
+.env
+*.json
+!package.json
+service_account*.json
+credentials*.json
+
+# Logs
+*.log
+pipeline_narrative_log_*.txt
+query_agent_result.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

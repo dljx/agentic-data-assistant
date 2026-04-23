@@ -1,0 +1,72 @@
+# requirements.txt
+
+# This file lists the Python packages required to run the Open_Data_QnA application.
+# Use the following command to install them:
+# pip install -r requirements.txt
+
+
+# --- Google AI / Machine Learning ---
+# Main SDK for interacting with Gemini models. Version 0.5.0 or higher is
+# recommended for stable tool-calling features.
+google-cloud-aiplatform
+google-generativeai>=0.8.3
+
+
+# --- Google Cloud Platform Connectors ---
+# Core library for authenticating with Google Cloud services.
+google-auth>=2.29.0
+
+# Client library for interacting with Google BigQuery.
+google-cloud-bigquery>=3.25.0
+
+# Client library for interacting with Google Cloud Firestore (for chat history).
+# google-cloud-firestore>=2.17.0  # REMOVED - No longer needed
+
+
+# --- Data Handling ---
+# Essential library for data manipulation and analysis.
+pandas>=1.5.0
+
+
+# --- Configuration ---
+# Used for parsing the prompts.yaml file.
+PyYAML>=6.0
+
+google-genai
+
+# --- Web Interface ---
+# Flask framework for the web interface
+Flask>=3.0.0
+
+# For loading environment variables (optional but recommended).
+python-dotenv>=1.0.0
+
+# For web scraping and search functionality
+requests>=2.32.0
+beautifulsoup4>=4.12.0
+html2text>=2024.2.26
+
+# For text processing and NLP
+Pillow>=10.0.0
+scikit-learn>=1.3.0
+
+# For testing and development
+pytest>=7.0.0
+pytest-asyncio>=0.23.0
+
+# For notebook support (optional)
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Additional utilities
+tqdm>=4.64.0  # Progress bars
+
+# For better datetime handling
+python-dateutil>=2.8.0
+
+# For HTTP requests with better error handling
+urllib3>=1.26.0
+
+db-dtypes==1.4.3
+
+sqlglot

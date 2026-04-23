@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Data Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with logo -->
+        <header class="header">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+            <button id="newConversationBtn" class="new-conversation-btn" title="Start a new conversation (Ctrl+R)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2V6M12 18V22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12H6M18 12H22M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                New Chat
+            </button>
+        </header>
+
+        <!-- Chat container -->
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <p>Welcome to Agentic Data Assistant! Ask me anything about entities and data.</p>
+                </div>
+            </div>
+            
+            <!-- Grounding toggle -->
+            <div class="grounding-toggle-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="groundingToggle">
+                    <span class="slider"></span>
+                </label>
+                <div class="toggle-content">
+                    <span class="toggle-label">Web Search (Gemini)</span>
+                    <span class="toggle-description">Enable real-time web search for up-to-date information</span>
+                    <span class="grounding-status" id="groundingStatus">🌐 Web search enabled</span>
+                </div>
+            </div>
+
+            <!-- Context History toggle
+            <div class="grounding-toggle-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="contextHistoryToggle" checked>
+                    <span class="slider"></span>
+                </label>
+                <div class="toggle-content">
+                    <span class="toggle-label">Conversation Memory</span>
+                    <span class="toggle-description">Remember previous messages for more contextual responses</span>
+                    <span class="grounding-status" id="contextHistoryStatus">💭 Conversation memory enabled</span>
+                </div>
+            </div>
+            -->
+
+            <!-- Chat input -->
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="messageInput" placeholder="Ask me about companies, investors, or market data..." maxlength="500">
+                    <button id="sendButton" class="send-button">
+                        <span>Send</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading indicator -->
+        <div class="loading-indicator" id="loadingIndicator">
+            <div class="loading-dots">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p>Thinking...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
